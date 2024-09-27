@@ -1,0 +1,118 @@
+.parteOne,
+.parteTwo {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    width: 40vw;
+    height: 40vh;
+    border: 2px solid #ffffff40;
+    border-top: 1px solid #ffffff80;
+    border-left: 1px solid #ffffff80;
+    border-bottom: 1px solid #ffffff80;
+    border-right: 1px solid #ffffff80;
+    box-shadow: 0px 15px 35px #c8c9ca8a;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 3%;
+    background: linear-gradient(110deg, rgba(254, 252, 252, 0.979) 0%, rgba(251, 247, 247, 0.848) 40%, rgba(254, 252, 252, 0.842) 50%, rgba(255, 253, 253, 0.952) 60%, rgba(254, 253, 253, 0.963) 100%);
+    animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.parteTwo h1 {
+    font-size: 43px;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+.supplement {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.supplement span {
+    width: 200px;
+    margin: 2%;
+    height: 125px;
+    border-radius: 5px;
+    border: 1px dashed #0d052cf6;
+}
+
+.carteContainer {
+    background-color: #070d16;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5%;
+    align-items: center;
+    position: absolute;
+    display: none;
+}
+
+.content {
+    width: 100%;
+    height: 5vh;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: 3%;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    color: #0e111af5;
+}
+
+#finale {
+    position: absolute;
+    z-index: 2;
+    top: 80%;
+    left: 85%;
+}
+
+#Photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Photo a {
+    text-decoration: none;
+    font-size: 40px;
+    color: #0d052cf6;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #606060;
+    text-shadow: 0 1px #fff;
+}
+
+button:hover {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+button:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+button:focus {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
