@@ -1,14 +1,7 @@
 <!-- Site web
 Name :CarteElectronique
 Author : SINGO Yao Dieu Donné
-Date : 11/07/2024-->
-<?php
-
-
-
-
-?>
-
+Date : 29/09/2024-->
 
 <!DOCTYPE html>
 
@@ -60,27 +53,32 @@ Date : 11/07/2024-->
         </div>
         <div class="formulaire" id="formulaire">
             <div class="formcontainer">
-                <form action="index.php" method="post" id="formulaireDeDonnee">
+                <form  method="post" id="formulaireDeDonnee" name="formulaire">
                     <h1>Données de la carte</h1>
                     <div class="input">
                         <label for="name">Nom</label>
                         <input type="text" name="name" id="name" title="Cher utilisateur veuillez entrer votre nom" placeholder="E.g: ERIC">
+                        <span id="nameError"></span>
                     </div>
                     <div class="input">
                         <label for="surname">Prénom</label>
                         <input type="text" name="surname" id="surname" title="Cher utilisateur veuillez entrer votre prénom" placeholder="E.g: daniel">
+                        <span id="surnameError"></span>
                     </div>
                     <div class="input">
                         <label for="date">Date de Naissance</label>
                         <input type="date" name="date" id="date" title="Cher utilisateur veuillez entrer votre date de naissance" placeholder="23/12/2021">
+                        <span id="dateError"></span>
                     </div>
                     <div class="input">
                         <label for="lieu">Lieu de Naissance</label>
                         <input type="text" name="lieu" id="lieu" title="Cher utilisateur veuillez entrer votre Lieu de naissance" placeholder="E.g: Luxembourg">
+                        <span id="lieuError"></span>
                     </div>
                     <div class="input">
                         <label for="adresse">Adresse de résidence</label>
                         <input type="text" name="adresse" id="adresse" title="Cher utilisateur veuillez entrer votre adresse de residence" placeholder="E.g: New york">
+                        <span id="adresseError"></span>
                     </div>
                     <div class="inputSutbmi">
                         <input type="reset" value="Recommencer" id="resetButton">
