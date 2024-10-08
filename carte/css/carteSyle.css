@@ -1,3 +1,4 @@
+/* Conteneur principal pour la première section */
 .parteOne,
 .parteTwo {
     display: flex;
@@ -16,9 +17,9 @@
     box-sizing: border-box;
     padding: 3%;
     background: linear-gradient(110deg, rgba(254, 252, 252, 0.979) 0%, rgba(251, 247, 247, 0.848) 40%, rgba(254, 252, 252, 0.842) 50%, rgba(255, 253, 253, 0.952) 60%, rgba(254, 253, 253, 0.963) 100%);
-    animation: gradient-animation_2 1.2s linear infinite;
 }
 
+/* Conteneur pour le titre de la deuxième section */
 .parteTwo h1 {
     font-size: 43px;
     width: 100%;
@@ -26,6 +27,7 @@
     letter-spacing: 1px;
 }
 
+/* Conteneur pour les éléments supplémentaires */
 .supplement {
     width: 100%;
     display: flex;
@@ -33,14 +35,19 @@
     justify-content: space-between;
 }
 
+/* Conteneur pour les éléments dans le conteneur supplémentaire */
 .supplement span {
-    width: 200px;
+    width: 250px;
     margin: 2%;
     height: 125px;
     border-radius: 5px;
     border: 1px dashed #0d052cf6;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
 }
 
+/* Conteneur principal pour la carte */
 .carteContainer {
     background-color: #070d16;
     width: 100%;
@@ -54,6 +61,7 @@
     display: none;
 }
 
+/* Conteneur pour le contenu de la carte */
 .content {
     width: 100%;
     height: 4vh;
@@ -64,8 +72,15 @@
     text-align: left;
     align-items: center;
     color: #0e111af5;
+    font-size: 18px;
 }
 
+/* Conteneur pour l'élément à l'intérieur du contenu */
+.content span {
+    margin-left: 10px;
+}
+
+/* Conteneur pour le bouton final */
 #finale {
     position: absolute;
     z-index: 2;
@@ -73,18 +88,64 @@
     left: 85%;
 }
 
+/* Conteneur pour l'image */
 #Photo {
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Conteneur pour le téléchargement de fichiers */
+.custum-file-upload {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cacaca;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Conteneur pour l'icône de téléchargement */
+.custum-file-upload .icon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#Photo a {
-    text-decoration: none;
-    font-size: 40px;
-    color: #0d052cf6;
+/* Conteneur pour l'icône SVG dans le téléchargement de fichiers */
+.custum-file-upload .icon svg {
+    height: 40px;
+    fill: rgba(75, 85, 99, 1);
 }
 
+/* Conteneur pour le texte dans le téléchargement de fichiers */
+.custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur pour le texte dans le téléchargement de fichiers */
+.custum-file-upload .text span {
+    font-weight: 400;
+    color: rgba(75, 85, 99, 1);
+}
+
+/* Masque le champ d'entrée de fichier */
+.custum-file-upload input {
+    display: none;
+}
+
+/* Conteneur pour le bouton */
 button {
     display: flex;
     align-items: center;
@@ -104,14 +165,26 @@ button {
     text-shadow: 0 1px #fff;
 }
 
+/* Effet au survol du bouton */
 button:hover {
     box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
 }
 
+/* Effet au clic du bouton */
 button:active {
     box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
 }
 
+/* Effet au focus du bouton */
 button:focus {
     box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+/*Style de l'image télécharger*/
+#previewImage {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 5px;
 }

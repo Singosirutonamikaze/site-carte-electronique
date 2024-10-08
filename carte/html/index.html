@@ -1,0 +1,125 @@
+<!-- Site web
+Name : CarteElectronique
+Author : SINGO Yao Dieu Donné
+Date : 29/09/2024 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Les metas pour rendre la page responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titre du site -->
+    <title>CarteElectronique</title>
+
+    <!-- Lien vers les fichiers CSS -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/carteSyle.css">
+
+    <!-- Liens vers les polices et scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- lien vers les scripts -->
+    <script src="../js/index.js" defer></script>
+    <script src="../js/animation.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+
+<body>
+    <!-- Conteneur principal du formulaire et de l'affichage de la carte -->
+    <div class="form">
+        <!-- Section contenant les informations de la carte -->
+        <div class="carteContainer" id="carteContainer" style="display: none;">
+            <div class="parteOne">
+                <!-- Champs à remplir automatiquement après soumission -->
+                <div class="content">Nom : <span id="nameSpan"></span></div>
+                <div class="content">Prénom : <span id="surnameSpan"></span></div>
+                <div class="content">Date de Naissance : <span id="dateSpan"></span></div>
+                <div class="content">Lieu de Naissance : <span id="lieuSpan"></span></div>
+                <div class="content">Adresse : <span id="adresseSpan"></span></div>
+            </div>
+            <div class="parteTwo">
+                <h1>0000 0000 0000 0000</h1>
+                <div class="supplement">
+                    <span id="codePersonnelle"></span>
+                    <span id="Photo">
+                        <!-- Formulaire pour télécharger une photo -->
+                        <label class="custum-file-upload" for="file" id="labelupload">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <!-- SVG code d'un icône -->
+                                    <path fill=""
+                                        d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text"   title="Cliquer ici pour telecharger votre image">Clicker ici</div>
+                            <input type="file" id="file" accept="image/*"> <!-- Acceptation des fichiers image -->
+                        </label>
+                        <img id="previewImage"/>
+                        <!-- Éléments pour afficher l'image -->
+                    </span>
+                </div>
+            </div>
+
+            <!-- Bouton pour finaliser -->
+            <button id="finale">Finaliser</button>
+        </div>
+
+        <!-- Formulaire de saisie des données -->
+        <div class="formulaire" id="formulaire">
+            <div class="formcontainer">
+                <form method="post" id="formulaireDeDonnee" name="formulaire">
+                    <h1 class="title">Données de la carte</h1>
+
+                    <!-- Entrée pour le nom -->
+                    <div class="input">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom" placeholder="E.g: ERIC">
+                        <span id="nameError"></span>
+                    </div>
+
+                    <!-- Entrée pour le prénom -->
+                    <div class="input">
+                        <label for="surname">Prénom</label>
+                        <input type="text" name="surname" id="surname" placeholder="E.g: daniel">
+                        <span id="surnameError"></span>
+                    </div>
+
+                    <!-- Entrée pour la date de naissance -->
+                    <div class="input">
+                        <label for="dateNaissance">Date de Naissance</label>
+                        <input type="date" name="dateNaissance" id="dateNaissance">
+                        <span id="dateError"></span>
+                    </div>
+
+                    <!-- Entrée pour le lieu de naissance -->
+                    <div class="input">
+                        <label for="lieuNaissance">Lieu de Naissance</label>
+                        <input type="text" name="lieuNaissance" id="lieuNaissance" placeholder="E.g: Luxembourg">
+                        <span id="lieuError"></span>
+                    </div>
+
+                    <!-- Entrée pour l'adresse -->
+                    <div class="input">
+                        <label for="Adresse">Adresse de résidence</label>
+                        <input type="text" name="Adresse" id="Adresse" placeholder="E.g: New york">
+                        <span id="adresseError"></span>
+                    </div>
+
+                    <!-- Boutons pour réinitialiser et envoyer le formulaire -->
+                    <div class="inputSutbmi">
+                        <input type="reset" value="Réinitialiser" id="resetButton">
+                        <input type="submit" value="Envoyer" id="submitButton">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
