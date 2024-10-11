@@ -19,12 +19,89 @@
     background: linear-gradient(110deg, rgba(254, 252, 252, 0.979) 0%, rgba(251, 247, 247, 0.848) 40%, rgba(254, 252, 252, 0.842) 50%, rgba(255, 253, 253, 0.952) 60%, rgba(254, 253, 253, 0.963) 100%);
 }
 
+.parteOne,
+.parteTwo {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(240, 15%, 9%);
+    --paragraph: hsl(0, 0%, 83%);
+    --line: hsl(240, 9%, 17%);
+    --primary: hsl(189, 92%, 58%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 40vh;
+    padding: 3%;
+    width: 40vw;
+    background-color: hsla(240, 15%, 9%, 1);
+    background-image: radial-gradient(at 88% 40%,
+            hsla(240, 15%, 9%, 1) 0px,
+            transparent 85%),
+        radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+        radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+        radial-gradient(at 0% 64%, hsl(189, 99%, 26%) 0px, transparent 85%),
+        radial-gradient(at 41% 94%, hsl(189, 97%, 36%) 0px, transparent 85%),
+        radial-gradient(at 100% 99%, hsl(188, 94%, 13%) 0px, transparent 85%);
+    border-radius: 1rem;
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+}
+
+.parteOne .card__border,
+.parteTwo .card__border {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-image: linear-gradient(0deg,
+            hsl(0, 0%, 100%) -50%,
+            hsl(0, 0%, 40%) 100%);
+    border-radius: 1rem;
+}
+
+.parteOne .card__border::before,
+.parteTwo .card__border::before {
+    content: "";
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 200;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%), rotate(0deg);
+    transform-origin: left;
+
+    width: 200%;
+    height: 10rem;
+    background-image: linear-gradient(0deg,
+            hsla(0, 0%, 100%, 0) 0%,
+            hsl(189, 100%, 50%) 40%,
+            hsl(189, 100%, 50%) 60%,
+            hsla(0, 0%, 40%, 0) 100%);
+
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 /* Conteneur pour le titre de la deuxième section */
 .parteTwo h1 {
-    font-size: 43px;
+    font-size: 51px;
     width: 100%;
     box-sizing: border-box;
     letter-spacing: 1px;
+    padding: 0% 1%;
+    line-height: 1px;
+    color: #fff;
 }
 
 /* Conteneur pour les éléments supplémentaires */
@@ -64,14 +141,14 @@
 /* Conteneur pour le contenu de la carte */
 .content {
     width: 100%;
-    height: 4vh;
+    height: 5vh;
     box-sizing: border-box;
     font-weight: bold;
-    margin: 2%;
+    margin: 1%;
     display: flex;
     text-align: left;
     align-items: center;
-    color: #0e111af5;
+    color: #fff;
     font-size: 18px;
 }
 
@@ -165,21 +242,6 @@ button {
     text-shadow: 0 1px #fff;
 }
 
-/* Effet au survol du bouton */
-button:hover {
-    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
-}
-
-/* Effet au clic du bouton */
-button:active {
-    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-}
-
-/* Effet au focus du bouton */
-button:focus {
-    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
-}
-
 /*Style de l'image télécharger*/
 #previewImage {
     display: none;
@@ -187,4 +249,35 @@ button:focus {
     box-sizing: border-box;
     display: inline-block;
     border-radius: 5px;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
 }

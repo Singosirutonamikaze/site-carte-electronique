@@ -35,6 +35,18 @@ Date : 29/09/2024 -->
         <!-- Section contenant les informations de la carte -->
         <div class="carteContainer" id="carteContainer" style="display: none;">
             <div class="parteOne">
+                <div class="card__border"></div>
+                <div class="tools">
+                    <div class="circle">
+                        <span class="red box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="yellow box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="green box"></span>
+                    </div>
+                </div>
                 <!-- Champs à remplir automatiquement après soumission -->
                 <div class="content">Nom : <span id="nameSpan"></span></div>
                 <div class="content">Prénom : <span id="surnameSpan"></span></div>
@@ -43,7 +55,19 @@ Date : 29/09/2024 -->
                 <div class="content">Adresse : <span id="adresseSpan"></span></div>
             </div>
             <div class="parteTwo">
-                <h1>0000 0000 0000 0000</h1>
+                <div class="card__border"></div>
+                <div class="tools">
+                    <div class="circle">
+                        <span class="red box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="yellow box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="green box"></span>
+                    </div>
+                </div>
+                <h1 id="codeSecret">0000 234 355 5689</h1>
                 <div class="supplement">
                     <span id="codePersonnelle"></span>
                     <span id="Photo">
@@ -57,10 +81,11 @@ Date : 29/09/2024 -->
                                     </path>
                                 </svg>
                             </div>
-                            <div class="text"   title="Cliquer ici pour telecharger votre image">Clicker ici</div>
-                            <input type="file" id="file" accept="image/*"> <!-- Acceptation des fichiers image -->
+                            <div class="text" title="Cliquer ici pour telecharger votre image">Clicker ici</div>
+                            <input type="file" id="file" accept="image/*">
+                            <!-- Acceptation des fichiers image -->
                         </label>
-                        <img id="previewImage"/>
+                        <img id="previewImage" />
                         <!-- Éléments pour afficher l'image -->
                     </span>
                 </div>
@@ -86,7 +111,7 @@ Date : 29/09/2024 -->
                     <!-- Entrée pour le prénom -->
                     <div class="input">
                         <label for="surname">Prénom</label>
-                        <input type="text" name="surname" id="surname" placeholder="E.g: daniel">
+                        <input type="text" name="surname" id="surname" placeholder="E.g: Daniel">
                         <span id="surnameError"></span>
                     </div>
 
@@ -107,7 +132,7 @@ Date : 29/09/2024 -->
                     <!-- Entrée pour l'adresse -->
                     <div class="input">
                         <label for="Adresse">Adresse de résidence</label>
-                        <input type="text" name="Adresse" id="Adresse" placeholder="E.g: New york">
+                        <input type="text" name="Adresse" id="Adresse" placeholder="E.g: TOGO, Lomé, Maritime">
                         <span id="adresseError"></span>
                     </div>
 

@@ -4,6 +4,7 @@ const resetButton = document.getElementById("resetButton");
 const formulaireDeDonnee = document.getElementById("formulaireDeDonnee");
 const carteContainer = document.getElementById("carteContainer");
 const formulaire = document.getElementById("formulaire");
+let finale = document.getElementById("finale");
 
 // Réinitialisation du formulaire
 resetButton.addEventListener('click', () => {
@@ -21,6 +22,7 @@ submitButton.addEventListener('click', (event) => {
         carteContainer.style.display = "flex";
         afficherDonnees();
         createQrCode();
+        document.getElementById("codeSecret").textContent = GenerateurChiffre();
     }
 });
 
@@ -37,10 +39,10 @@ function ValidationFormulaire() {
     let isValid = true;
 
     // Expressions régulières pour validation
-    const nameRegex = /^[a-zA-Z\s-]{3,}$/;
-    const surnameRegex = /^[a-zA-Zéèêëàäïöüç\s-]{3,}$/;
-    const lieuRegex = /^[a-zA-Zéèêëàäïöüç\s-]{3,}$/;
-    const adresseRegex = /^[a-zA-Zéèêëàäïöüç\s-]{3,}$/;
+    const nameRegex = new RegExp(/^[a-zA-Z\s-]{3,}$/);
+    const surnameRegex = new RegExp(/^[a-zA-Zéèêëàäïöüç\s-]{3,}$/);
+    const lieuRegex = new RegExp(/^[a-zA-Zéèêëàäïöüç\s-]{3,}$/);
+    const adresseRegex = new RegExp(/^[a-zA-Z0-9À-ÿ\s,]+$/);
 
     // Validation des différents champs
     if (!nameRegex.test(inputName)) {
@@ -65,9 +67,9 @@ function ValidationFormulaire() {
         const moisDifference = today.getMonth() - birthDate.getMonth();
 
         // Vérification si l'anniversaire a déjà eu lieu cette année
-        if (moisDifference < 0 || (moisDifference === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
+        // if (moisDifference < 0 || (moisDifference === 0 && today.getDate() < birthDate.getDate())) {
+        //     age--;
+        // }
 
         // Vérification de l'âge
         if (age < 18) {
@@ -174,6 +176,18 @@ function TelechargerImage() {
 
 // Appel de la fonction pour le telechargement de l'image
 TelechargerImage();
+
+
+// Création du code personnel
+function GenerateurChiffre() {
+    let numbers = '';
+    for (let i = 0; i < 14; i++) {
+        numbers += Math.floor(Math.random() * 11); // Génère un chiffre aléatoire entre 0 et 9
+    }
+    return numbers; // Utiliser le résultat de ajouterEspaces
+}
+
+
 
 
 

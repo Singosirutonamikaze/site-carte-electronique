@@ -86,6 +86,7 @@ form {
     background-color: #fff;
     box-sizing: border-box;
     z-index: 3;
+    animation: my_anime 2s ease-in;
 }
 
 /* Animation pour le formulaire */
@@ -123,6 +124,7 @@ input {
     box-sizing: border-box;
     font-size: 18px;
     font-weight: 200;
+    font-weight: bold;
 }
 
 /* Conteneur pour les boutons de soumission */

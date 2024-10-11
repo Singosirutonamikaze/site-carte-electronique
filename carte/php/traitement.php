@@ -18,8 +18,8 @@
 
     //Envoie des données suivant la condition if 
     if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['date']) && isset($_POST['lieu']) && isset($_POST['adresse'])) {
-        
-     }
+            
+    }
 
 
 
