@@ -1,25 +1,43 @@
 <?php
-    //Envoyé les données du formulaire vers la table sql
-    $username = "";
-    $password = "";
-    $servername = "localhost";
-    
-    // $bdd = new PDO("mysql:host=$servername;dbname=carte", $username, $password);
-    // $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // $bdd->exec("set names utf8");
+// Connexion à la base de données avec PDO
+$username = 'root';
+$password = "";
+$servername = "localhost";
 
+try {
+    $bdd = new PDO("mysql:host=$servername;dbname=carte", $username, $password);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $bdd->exec("set names utf8");
+} catch (PDOException $e) {
+    echo("Erreur de connexion à la base de données : " . $e->getMessage());
+}
 
-    //variables
-    $name = $_POST['name'] ?? "";
-    $surname = $_POST['surname'] ?? "";
-    $date = $_POST['date']??"";
-    $lieu = $_POST['lieu']??"";
-    $adresse = $_POST['adresse']??"";
+// Variables récupérées depuis le formulaire
+$nom = $_POST['nom'] ?? "";
+$prenom = $_POST['surname'] ?? "";
+$dateNaissance = $_POST['dateNaissance'] ?? "";
+$lieuNaissance = $_POST['lieuNaissance'] ?? "";
+$adresse = $_POST['Adresse'] ?? "";
 
-    //Envoie des données suivant la condition if 
-    if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['date']) && isset($_POST['lieu']) && isset($_POST['adresse'])) {
-            
+// Vérification que tous les champs sont remplis
+if (!empty($nom) && !empty($prenom) && !empty($dateNaissance) && !empty($lieuNaissance) && !empty($adresse)) {
+    // Préparation de la requête d'insertion
+    $requete = $bdd->prepare("INSERT INTO carte (nom, prenom, date_naissance, lieu_naissance, adresse) 
+                              VALUES (:nom, :prenom, :dateNaissance, :lieuNaissance, :adresse)");
+
+    // Liaison des paramètres
+    $requete->bindParam(':nom', $nom);
+    $requete->bindParam(':prenom', $prenom);
+    $requete->bindParam(':dateNaissance', $dateNaissance);
+    $requete->bindParam(':lieuNaissance', $lieuNaissance);
+    $requete->bindParam(':adresse', $adresse);
+
+    // Exécution de la requête
+    if ($requete->execute()) {
+        echo ("<script>alert('Données enregistées avec succès !');</script>");
+    } else {
+        echo "Une erreur est survenue : " . $requete->errorInfo()[2];
     }
-
-
-
+} else {
+    echo ("<script>alert('Veuillez remplir tous les champs !');</script>");
+}

@@ -4,7 +4,6 @@ const resetButton = document.getElementById("resetButton");
 const formulaireDeDonnee = document.getElementById("formulaireDeDonnee");
 const carteContainer = document.getElementById("carteContainer");
 const formulaire = document.getElementById("formulaire");
-let finale = document.getElementById("finale");
 
 // Réinitialisation du formulaire
 resetButton.addEventListener('click', () => {
@@ -66,7 +65,7 @@ function ValidationFormulaire() {
         const age = today.getFullYear() - birthDate.getFullYear();
         const moisDifference = today.getMonth() - birthDate.getMonth();
 
-        // Vérification si l'anniversaire a déjà eu lieu cette année
+        // //Vérification si l'anniversaire a déjà eu lieu cette année
         // if (moisDifference < 0 || (moisDifference === 0 && today.getDate() < birthDate.getDate())) {
         //     age--;
         // }
@@ -152,7 +151,7 @@ function createQrCode() {
     // Déclaration des variables
     const qrContent = `${document.getElementById("nom").value} + ${document.getElementById("surname").value} + ${document.getElementById("dateNaissance").value} + ${document.getElementById("lieuNaissance").value} + ${document.getElementById("Adresse").value}`;
     $('#codePersonnelle').empty(); // Vider le contenu précédent
-    $('#codePersonnelle').qrcode({ width: 250, height: 125, text: qrContent }); // Générer le code QR
+    $('#codePersonnelle').qrcode({ width:100,height: 100 , text: qrContent }); // Générer le code QR
 }
 
 //Télécharger une image sur la carte

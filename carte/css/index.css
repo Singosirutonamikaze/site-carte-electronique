@@ -7,7 +7,7 @@ body {
 /* Style du corps et du formulaire */
 body,
 .form {
-    background-color: #070d16;
+    background-color: #fefefe;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,6 +149,7 @@ input:valid.validClass {
 label {
     color: #050d29c9;
     font-weight: bold;
+  
 }
 
 /* Style des boutons de soumission et de réinitialisation */

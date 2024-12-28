@@ -17,6 +17,7 @@ Date : 29/09/2024 -->
     <!-- Lien vers les fichiers CSS -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/carteSyle.css">
+    <link rel="stylesheet" href="../css/carteFinale.css">
 
     <!-- Liens vers les polices et scripts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +99,8 @@ Date : 29/09/2024 -->
         <!-- Formulaire de saisie des données -->
         <div class="formulaire" id="formulaire">
             <div class="formcontainer">
-                <form method="post" id="formulaireDeDonnee" name="formulaire">
+                <form method="post" id="formulaireDeDonnee" name="formulaire"
+                    action="/site-carte-electronique/carte/php/traitement.php">
                     <h1 class="title">Données de la carte</h1>
 
                     <!-- Entrée pour le nom -->
@@ -145,6 +147,35 @@ Date : 29/09/2024 -->
             </div>
         </div>
     </div>
+    <div class="carteFinale" id="carteFinale">
+        <div class="flip-card-inner">
+            <div class="outer-font">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="ray"></div>
+                    <div class="text"></div>
+                    <div></div>
+                    <div class="line topl"></div>
+                    <div class="line leftl"></div>
+                    <div class="line bottoml"></div>
+                    <div class="line rightl"></div>
+                </div>
+            </div>
+            <div class="outer-back">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="ray"></div>
+                    <div class="text"></div>
+                    <div></div>
+                    <div class="line topl"></div>
+                    <div class="line leftl"></div>
+                    <div class="line bottoml"></div>
+                    <div class="line rightl"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
