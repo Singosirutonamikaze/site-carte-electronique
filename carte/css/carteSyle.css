@@ -23,7 +23,7 @@
     position: relative;
     gap: 1rem;
     padding: 3%;
-    background: linear-gradient(-90deg, rgb(0, 0, 0) 0%, #242424 100%);
+    background: linear-gradient(-90deg, rgb(228, 226, 226) 0%, #fbf4f4 100%);
     border-radius: 0.5rem;
     box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
 }
@@ -41,7 +41,7 @@
     height: calc(100% + 2px);
     background-image: linear-gradient(0deg,
             hsl(0, 0%, 100%) -50%,
-            hsl(0, 0%, 40%) 100%);
+            hsl(0, 0%, 87%) 100%);
     border-radius: 1rem;
 }
 
@@ -83,7 +83,7 @@
     letter-spacing: 1px;
     padding: 0% 1%;
     line-height: 1px;
-    color: #fff;
+    color: #010101;
 }
 
 /* Conteneur pour les éléments supplémentaires */
@@ -108,7 +108,7 @@
 
 /* Conteneur principal pour la carte */
 .carteContainer {
-    background-color: #fcfdfe;
+    background-color: #0b121e;
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -130,7 +130,7 @@
     display: flex;
     text-align: left;
     align-items: center;
-    color: #fff;
+    color: #0f0808;
     font-size: 18px;
 }
 
@@ -206,22 +206,35 @@
 
 /* Conteneur pour le bouton */
 button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    cursor: pointer;
-    width: 150px;
-    height: 50px;
-    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
-    border-radius: 30px;
-    border: 1px solid #8F9092;
-    transition: all 0.2s ease;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: #606060;
-    text-shadow: 0 1px #fff;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1.5em;
+}
+
+button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #05bada66;
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
 }
 
 /*Style de l'image télécharger*/
